@@ -1,0 +1,15 @@
+﻿@model IEnumerable<furniturestore.Models.Product>
+@{
+    ViewBag.Title = "SearchBox";
+}
+
+<h2>SearchBox</h2>
+
+
+@if (ViewBag.Count > 0)
+{
+    foreach (var p in Model)
+    {
+<p><a href="details/@p.id">@p.name @p.description </a> - @p.price</p>
+    }
+}

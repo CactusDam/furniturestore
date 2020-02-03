@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Futon Foods</h2>
+
+<p>Our Food Groups</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input type="text" name="searchbox" />
+    <select name="dropDown">
+        <option value="3">All</option>
+        <option value="0">Breakfast</option>
+        <option value="1">Lunch</option>
+        <option value="2">Dinner</option>
+    </select>
+
+    <input type="submit" />
+}
+
+
+@if (ViewBag.Count > 0)
+{
+    foreach (var p in Model)
+    {
+        <p>@p.name</p><br/>
+    }
+}

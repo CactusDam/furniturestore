@@ -1,0 +1,17 @@
+﻿@model IEnumerable<furniturestore.Models.FoodGroups>
+
+<style>
+    li{
+        display:inline;
+    }
+</style>
+
+<ul id="Categories">
+    @foreach(var meal in Model)
+    {
+        <li>
+            @Html.ActionLink(meal.name,"Browse","Store",
+        new { Meal = meal.name },null)
+    </li>
+    }
+</ul>
